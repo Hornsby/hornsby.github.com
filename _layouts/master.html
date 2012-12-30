@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>     <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]>        <html lang="en" class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]>        <html lang="en" class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" class="no-js"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>{%if page.url != '/index.html'%}
+{{ page.title }} | {{ site.title }}{%else%}
+{{ site.title }} | {{ site.subtitle }}{% endif %}</title>
+<meta name="viewport" content="width=device-width">
+{%comment%}<meta name="viewport" content="width=device-width, initial-scale=1.0">{%endcomment%}
+<meta name="description" content="{{ page.description }}">
+<meta name="author" content="{{ site.author.url }}">
+<link rel="stylesheet" href="/+/bootstrap.min.css">
+<link rel="stylesheet" href="/+/font-awesome.css">
+<link rel="stylesheet" href="/+/style.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+<!--script>window.Modernizr || document.write('<script src="/+/modernizr.js"><\/script>')</script-->
+</head>
+<body>
+<div id="wrap">
+<!--[if lt IE 7]><p class="chromeframe">
+You are using an <strong>outdated</strong> browser.  Please
+<a href="http://browsehappy.com/">upgrade your browser</a> or
+<a href="http://www.google.com/chromeframe/?redirect=true">activate Google
+Chrome Frame</a> to improve your experience.
+</p><![endif]-->
+<header class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" href="/navigate">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="/">{{ site.title }}</a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="{%if page.url == '/index.html'%}active{%endif%}"><a href="/">Home</a></li>
+          <li class="{%if page.url == '/wiki.html'%}active{%endif%}"><a href="/wiki">Wiki</a></li>
+          <li class="divider-vertical"></li>
+          <li class="">
+		    <a href="http://facebook.com/{{ site.facebook }}"><span><i class="icon-facebook"> </i><span class="hidden-desktop">Facebook</span></span></a>
+		  </li>
+          <li class="">
+		    <a href="http://twitter.com/{{ site.twitter }}"><span><i class="icon-twitter"> </i> <span class="hidden-desktop">Twitter</span></span></a>
+		  </li>
+          <li class="">
+		    <a href="http://plus.google.com/{{ site.gplus }}"><span><i class="icon-google-plus"> </i> <span class="hidden-desktop">Google+</span></span></a>
+		  </li>
+        </ul>
+
+          <!--li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="nav-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li-->
+        <!--form class="navbar-form pull-right">
+          <input class="span2" type="text" placeholder="Email">
+          <input class="span2" type="password" placeholder="Password">
+          <button type="submit" class="btn">Sign in</button>
+        </form-->
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</header>
+<div class="container">
+{{content}}
+</div>
+<div id="push"></div>
+</div>
+<footer id="site-footer">
+  <div class="container">
+  <p class="muted">
+    <small>&copy; {{ site.author.name }}, 2012</small>
+  </p>
+  </div>
+</footer>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.2/bootstrap.min.js"></script>
+<script src="/script.js"></script>
+<script>
+var _gaq=[['_setAccount','UA-{{ site.ga }}'],['_trackPageview']];
+(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+</body>
+</html>

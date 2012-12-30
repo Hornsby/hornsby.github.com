@@ -1,0 +1,129 @@
+######################################################
+# Configure the options in this file to your liking.
+# https://github.com/mojombo/jekyll/wiki/configuration
+######################################################
+
+## Site author's information.
+author:
+  ## Author's name, <meta name=author> in _layouts/default.html and used in
+  ## humans.txt
+  name:      &u_name     Kaleb Hornsby
+  ## Author's title
+  title:     &u_title    Software Engineer
+  ## Author's email address
+  email:     kaleb@horns.by
+  ## Author's web site
+  url:       &u_url      "http://kaleb.horns.by"
+  ## Author's location
+  location:  Augusta, GA, US
+  ## Author's github user name
+  gh:        &u_gh       kaleb
+  ## Author's twitter name
+  twitter:   &u_facebook thekaleb
+  facebook:  &u_twitter  thekaleb
+  gplus:     &u_gplus    xxx
+
+## The absolute URL of your site. Should be user.github.com or whatever is in
+## the root CNAME file
+url:         "http://horns.by"
+
+## The name of the site, <title> and <h1> in _layouts/default.html
+title:       Horns.by
+subtitle:    The Hornsby Family
+
+## <meta name=description> and <h2> in /_layouts/default.html
+description: Home of the Hornsby family
+
+facebook:    *u_facebook
+twitter:     *u_twitter
+gplus:       *u_gplus
+github:
+  acct:      Hornsby
+  repo:      hornsby.github.com
+disqus: 
+  shortname: kzh
+
+## <meta name=keywords> in  /_layouts/default.html, probably not useful anymore.
+keywords:    [ ]
+
+## Splits your posts up over multiple subdirectories called page2, page3, pageN
+paginate:    6
+
+## Google Analytics id. XXXXXXXX-X
+ga: 15567355-1
+
+## A list of directories and files to exclude from the conversion
+exclude: [ ]
+
+#################
+# Jekyll Defaults
+#################
+
+## Render the future dated posts.
+#future:      true
+
+## Uses RDiscount or [engine] instead of Maruku. Maruku is the default.
+#markdown:    Maruku
+
+## Controls the URLs that posts are generated with.
+## https://github.com/mojombo/jekyll/wiki/Permalinks
+#permalink:   /:categories/:title
+
+## Enables or disables Jekyll from recreating the site when files are modified.
+#auto:        false
+
+## Fires up a server that will host your _site directory
+#server:      false
+
+## Changes the port that the Jekyll server will run on
+#server_port: 4000
+
+##
+#plugins:     ./_plugins
+
+## Maruku options, if it is being used.
+maruku:
+  use_tex:    false
+  use_divs:   false
+  png_engine: blahtex
+  png_dir:    images/latex
+  png_url:    /images/latex
+
+## RDiscount options, if it is being used.
+rdiscount:
+  extensions: []
+
+## Kramdown options, if it is being used.
+kramdown:
+  auto_ids: true,
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: true
+  
+  coderay:
+    coderay_wrap: div
+    coderay_line_numbers: 
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
+
+########################
+# Github Pages Overrides
+########################
+
+## Produces an index for related posts.
+#lsi:         false
+
+## Enables highlight tag with Pygments.
+pygments:    yes
+
+##
+#safe:        false
+
+## Changes the directory where Jekyll will look to transform files
+#source:      .
+
+## Changes the directory where Jekyll will write files to
+#destination: ./_site
