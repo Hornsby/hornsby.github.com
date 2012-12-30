@@ -13,11 +13,11 @@ layout: master
   </p>
 </div>
 <div class="row">
-  {% for page in paginator.posts %}
+  {% for post in paginator.posts %}
     <div class="post span4">
-      <h2><a href="{{ page.url }}" {{ page.title }}</h2>
+      <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
       <p>
-        {{ page.content | truncatewords:'20' }}
+        {{ post.content }}
       </p>
       <p>
         <a class="btn" href="{{ page.url }}">Read More &raquo;</a>
