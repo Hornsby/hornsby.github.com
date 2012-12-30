@@ -13,7 +13,16 @@ layout: master
   </p>
 </div>
 <div class="row">
-  {% for post in paginator.posts %}
+  {% for page in paginator.posts %}
+    <div class="post span4">
+      <h2><a href="{{ page.url }}" {{ page.title }}</h2>
+      <p>
+        {{ page.content | truncatewords:'20' }}
+      </p>
+      <p>
+        <a class="btn" href="{{ page.url }}">Read More &raquo;</a>
+      </p>
+    </div>
   {% endfor %}
   <div class="span4">
     <h2>Post 1</h2>
