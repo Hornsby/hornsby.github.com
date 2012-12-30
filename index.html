@@ -60,7 +60,6 @@ layout: master
         <i class="icon-step-backward"> </i>
       </a>
     </li>
-    <li><a href="/">1</a></li>
   {% else %}
     <li class="disabled">
       <span title="First Page"><i class="icon-fast-backward"> </i></span>
@@ -68,22 +67,22 @@ layout: master
     <li class="disabled">
       <span title="Previous Page"><i class="icon-step-backward"> </i></span>
     </li>
-    <li class="active"><span>1</span></li>
   {% endif %}
   
-  {% if paginator.total_pages > 1 %}
-    {% for count in (2..paginator.total_pages) %}
-      {% if count == paginator.page %}
-        <li class="active"><span>{{ count }}</span></li>
-      {% else %}
-        <li><a href="/page{{ count }}">{{ count }}</a></li>
-      {% endif %}
-    {% endfor %}
-  {% endif %}
+  {% for count in (1..paginator.total_pages) %}
+    {% if count == paginator.page %}
+      <li class="active"><span>{{ count }}</span></li>
+    {% else %}
+      <li>
+        <a href="/{% if count > 1 %}page{{ count }}{% endif %}">{{ count }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
   
   {% if paginator.total_pages < 5 %}
     <!-- Adding some dummy filler page refs -->
-    {% for count in ((paginator.total_pages + 1)..5) %}
+    {% capture filler %}{{ paginator.total_pages | plus:'1' }}{% endcapture %}
+    {% for count in (filler..5) %}
       <li class="disabled"><span>{{ count }}</span></li>
     {% endfor %}
   {% endif %}
