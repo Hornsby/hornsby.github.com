@@ -5,7 +5,7 @@ layout: master
 <div class="hero-unit">
   <h1 class="main-title">
     <span>{{ site.title }}</span>
-	<small>{{ site.subtitle }}
+    <small>{{ site.subtitle }}</small>
   </h1>
   <p itemprop="description">{{ site.description }} </p>
   <p>
@@ -13,6 +13,8 @@ layout: master
   </p>
 </div>
 <div class="row">
+  {% for post in paginator.posts %}
+  {% endfor %}
   <div class="span4">
     <h2>Post 1</h2>
     <p>
@@ -46,5 +48,50 @@ layout: master
       <a class="btn" href="#">View details &raquo;</a>
     </p>
   </div>
+</div>
+<div class="pagination pagination-centered">
+  <ul>
+  {% if paginator.previous_page %}
+    <li>
+      <a href="/" title="First Page"><i class="icon-fast-backward"> </i></a>
+    </li>
+    <li>
+      <a href="/{% if paginator.previous_page > 1 %}page{{ paginator.previous_page }}{% endif %}" title="Previous Page">
+        <i class="icon-step-backward"> </i>
+      </a>
+    </li>
+  {% else %}
+    <li class="disabled">
+      <span title="First Page"><i class="icon-fast-backward"> </i></span>
+    </li>
+    <li class="disabled">
+      <span title="Previous Page"><i class="icon-step-backward"> </i></span>
+    </li>
+  {% endif %}
+    
+  {% for count in (2..paginator.total_pages) %}
+    {% if count == paginator.page %}
+      <li class="active"><span>{{ count }}</span></li>
+    {% else %}
+      <li><a href="/page{{ count }}">{{ count }}</a></li>
+    {% endif %}
+  {% endfor %}
+  
+  {% if paginator.next_page %}
+    <li class="disabled">
+      <a href="/page{{ paginator.next_page }}" title="Next Page"><i class="icon-step-forward"> </i></a>
+    </li>
+    <li class="disabled">
+      <a href="/page{{ paginator.total_pages }}" title="Last Page"><i class="icon-fast-forward"> </i></a>
+    </li>
+  {% else %}
+    <li class="disabled">
+      <span title="Next Page"><i class="icon-step-forward"> </i></span>
+    </li>
+    <li class="disabled">
+      <span title="Last Page"><i class="icon-fast-forward"> </i></span>
+    </li>
+  {% endif %}
+  </ul>
 </div>
 </div>
