@@ -10,113 +10,107 @@ Horns.by
 `~/`
 ----
 
-.gitignore
+`.gitignore`
 : description
 
-404.html
+`404.html`
 : description
 
-CNAME
+`CNAME`
 : description
 
-README.md
+`README.md`
 : description
 
-_config.yml
+`_config.yml`
 : description
 
-crossdomain.xml
+`crossdomain.xml`
 : description
 
-humans.txt
+`humans.txt`
 : description
 
-index.html
+`index.html`
 : description
 
-robots.txt
+`robots.txt`
 : description
 
 `~/_includes`
 ----
 
-README.html
+`README.html`
 : description
 
-default.html
+`default.html`
 : description
 
-master.html
+`master.html`
 : description
 
-post.html
+`post.html`
 : description
 
 `~/_layouts`
 ----
 
-README.html
+`README.html`
 : description
 
-default.html
+`default.html`
 : description
 
-master.html
+`master.html`
 : description
 
-post.html
+`post.html`
 : description
 
 `~/_posts`
 ----
 
-1996-08-06-README.md
+`1996-08-06-README.md`
 : description
 
 `~/+`
 ----
 
-README.md
+`README.md`
 : description
 
-atom.xml
+`atom.xml`
 : description
 
-css
-: description
-
-font
-: description
-
-script.js
+`script.js`
 : description
 
 `~/+/css:`
 ----
 
-bootstrap.min.css
+`bootstrap.min.css`
 : description
 
-font-awesome-ie7.css
+`font-awesome-ie7.css`
 : description
 
-font-awesome.css
+`font-awesome.css`
 : description
 
-style.css
+`style.css`
 : description
 
 `~/+/font:`
 ----
 
-fontawesome-webfont.eot
+`fontawesome-webfont.eot`
 : description
 
-fontawesome-webfont.svg
+`fontawesome-webfont.svg`
 : description
 
-fontawesome-webfont.ttf
+`fontawesome-webfont.ttf`
 : description
 
-fontawesome-webfont.woff
+`fontawesome-webfont.woff`
 : description
