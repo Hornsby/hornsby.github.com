@@ -21,11 +21,12 @@ author:
   ## Author's twitter name
   twitter:   &u_facebook thekaleb
   facebook:  &u_twitter  thekaleb
-  gplus:     &u_gplus    xxx
+  gplus:     &u_gplus    "106258285517412659099"
 
 ## The absolute URL of your site. Should be user.github.com or whatever is in
 ## the root CNAME file
 url:         "http://horns.by"
+base:        "/"
 
 ## The name of the site, <title> and <h1> in _layouts/default.html
 title:       Horns.by
@@ -34,6 +35,7 @@ subtitle:    The Hornsby Family
 ## <meta name=description> and <h2> in /_layouts/default.html
 description: Home of the Hornsby family
 
+## Social
 facebook:    *u_facebook
 twitter:     *u_twitter
 gplus:       *u_gplus
