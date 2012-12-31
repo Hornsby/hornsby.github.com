@@ -47,7 +47,7 @@ disqus:
 keywords:    [ ]
 
 ## Splits your posts up over multiple subdirectories called page2, page3, pageN
-paginate:    6
+paginate:    3
 
 ## Google Analytics id. XXXXXXXX-X
 ga: 15567355-1
