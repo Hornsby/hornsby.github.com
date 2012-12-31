@@ -17,7 +17,7 @@ author:
   ## Author's location
   location:  Augusta, GA, US
   ## Author's github user name
-  gh:        &u_gh       kaleb
+  github:    &u_gh       kaleb
   ## Author's twitter name
   twitter:   &u_facebook thekaleb
   facebook:  &u_twitter  thekaleb
