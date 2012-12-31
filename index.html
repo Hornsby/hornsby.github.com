@@ -3,28 +3,18 @@ layout: master
 ---
 <div>
 <div class="hero-unit">
-  <h1 class="main-title">
-    <span>{{ site.title }}</span>
-    <small>{{ site.subtitle }}</small>
-  </h1>
-  <p itemprop="description">{{ site.description }} </p>
-  <p>
-    <a class="btn btn-large" href="/about">Learn more &raquo;</a>
-  </p>
+  <h1 class="main-title"><span>{{ site.title }}</span><small>{{ site.subtitle }}</small></h1>
+  <p itemprop="description">{{ site.description }}</p>
+  <p><a class="btn btn-large" href="/about">Learn more &raquo;</a></p>
 </div>
 {% if paginator %}
-<div class="row">
-  {% for page in paginator.posts %}
-    <div class="post span4">
-      <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
-      <p>
-        {{ page.content | strip_html | truncatewords:'50' }}
-      </p>
-      <p>
-        <a class="btn" href="{{ page.url }}">Read More &raquo;</a>
-      </p>
-    </div>
-  {% endfor %}
+<div class="row">{% for page in paginator.posts %}
+  <div class="post span4">
+    <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
+    <p>{%if page.description %}{% else %}{{ page.content | strip_html | truncatewords:'50' }}{% endif %}</p>
+    <p><a class="btn" href="{{ page.url }}">Read More &raquo;</a></p>
+  </div>
+{% endfor %}
   <div class="span4">
     <h2>Post 2</h2>
     <p>
@@ -51,55 +41,36 @@ layout: master
 <div class="pagination pagination-centered pagination-mini">
   <ul>
   {% if paginator.previous_page %}
-    <li>
-      <a href="/" title="First Page"><i class="icon-fast-backward"> </i></a>
-    </li>
+    <li><a href="/" title="First Page"><i class="icon-fast-backward"> </i></a></li>
     <li>
       <a href="/{% if paginator.previous_page > 1 %}page{{ paginator.previous_page }}{% endif %}" title="Previous Page">
         <i class="icon-step-backward"> </i>
       </a>
     </li>
   {% else %}
-    <li class="disabled">
-      <span title="First Page"><i class="icon-fast-backward"> </i></span>
-    </li>
-    <li class="disabled">
-      <span title="Previous Page"><i class="icon-step-backward"> </i></span>
-    </li>
+    <li class="disabled"><span title="First Page"><i class="icon-fast-backward"> </i></span></li>
+    <li class="disabled"><span title="Previous Page"><i class="icon-step-backward"> </i></span></li>
   {% endif %}
-  
   {% for count in (1..paginator.total_pages) %}
-    {% if count == paginator.page %}
-      <li class="active"><span>{{ count }}</span></li>
-    {% else %}
-      <li>
-        <a href="/{% if count > 1 %}page{{ count }}{% endif %}">{{ count }}</a>
-      </li>
-    {% endif %}
+  {% if count == paginator.page %}
+    <li class="active"><span>{{ count }}</span></li>
+  {% else %}
+    <li><a href="/{% if count > 1 %}page{{ count }}{% endif %}">{{ count }}</a></li>
+  {% endif %}
   {% endfor %}
-  
   {% if paginator.total_pages < 5 %}
     <!-- Adding some dummy filler page refs -->
     {% capture filler %}{{ paginator.total_pages | plus:'1' }}{% endcapture %}
     {% for count in (filler..5) %}
-      <li class="disabled"><span>{{ count }}</span></li>
+    <li class="disabled"><span>{{ count }}</span></li>
     {% endfor %}
   {% endif %}
-  
   {% if paginator.next_page %}
-    <li class="disabled">
-      <a href="/page{{ paginator.next_page }}" title="Next Page"><i class="icon-step-forward"> </i></a>
-    </li>
-    <li class="disabled">
-      <a href="/page{{ paginator.total_pages }}" title="Last Page"><i class="icon-fast-forward"> </i></a>
-    </li>
+    <li><a href="/page{{ paginator.next_page }}" title="Next Page"><i class="icon-step-forward"> </i></a></li>
+    <li><a href="/page{{ paginator.total_pages }}" title="Last Page"><i class="icon-fast-forward"> </i></a></li>
   {% else %}
-    <li class="disabled">
-      <span title="Next Page"><i class="icon-step-forward"> </i></span>
-    </li>
-    <li class="disabled">
-      <span title="Last Page"><i class="icon-fast-forward"> </i></span>
-    </li>
+    <li class="disabled"><span title="Next Page"><i class="icon-step-forward"> </i></span></li>
+    <li class="disabled"><span title="Last Page"><i class="icon-fast-forward"> </i></span></li>
   {% endif %}
   </ul>
 </div>
