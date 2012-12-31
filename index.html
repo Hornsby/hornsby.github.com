@@ -5,8 +5,9 @@ layout: master
 <div class="hero-unit">
   <h1 class="main-title"><span>{{ site.title }}</span> <small>{{ site.subtitle }}</small></h1>
   <p itemprop="description">{{ site.description }}</p>
-  <p><a class="btn btn-large" href="/README">Learn more &raquo;</a></p>
+  <p><a class="btn btn-large btn-primary" href="/README">Learn more &raquo;</a></p>
 </div>
+<hr />
 {% if paginator %}
 <div class="row">{% for page in paginator.posts %}
   <div class="post span4">
