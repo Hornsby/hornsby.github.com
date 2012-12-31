@@ -11,7 +11,7 @@ layout: master
 <div class="row">{% for page in paginator.posts %}
   <div class="post span4">
     <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
-    <p>{%if page.description %}{% else %}{{ page.content | strip_html | truncatewords:'50' }}{% endif %}</p>
+    <p>{%if page.description %}{% else %}{{ page.content | strip_html | truncatewords:'30' }}{% endif %}</p>
     <p><a class="btn" href="{{ page.url }}">Read More &raquo;</a></p>
   </div>
 {% endfor %}
