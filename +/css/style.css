@@ -4,8 +4,8 @@
 #site-footer .container {
   margin-top:20px;
 }
-.pagination ul > li > span > i[class^="icon"],
-.pagination ul > li > span > i[class*="icon"] {
+.pagination ul > li > span > i[class^="icon-"],
+.pagination ul > li > span > i[class*="icon-"] {
   line-height: 18px;
 }
 /* Landscape phones and down */
