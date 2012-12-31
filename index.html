@@ -12,6 +12,7 @@ layout: master
     <a class="btn btn-large" href="/about">Learn more &raquo;</a>
   </p>
 </div>
+{% if paginate %}
 <div class="row">
   {% for page in paginator.posts %}
     <div class="post span4">
@@ -102,4 +103,5 @@ layout: master
   {% endif %}
   </ul>
 </div>
+{% endif %}
 </div>
