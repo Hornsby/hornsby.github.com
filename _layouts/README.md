@@ -14,5 +14,5 @@ layout: default
   <small><cite><a href="https://github.com/mojombo/jekyll/wiki/Usage>Jekyll Wiki: Usage</a></cite></small>
 </blockquote>
 <p>
-  Layouts can be nested.
+  Layouts can be nested and must be in HTML with a <code>.html</code> extension.
 </p>
