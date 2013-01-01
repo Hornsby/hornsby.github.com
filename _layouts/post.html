@@ -4,8 +4,9 @@
 {% for category in page.categories %}
 {% if forloop.first %}<ul class="breadcrumb" itemprop="breadcrumb">{% endif %}
   <li>
-    <a href="{% for i in forloop.rindex %}../{% endfor %}">{{ category }}</a>
-    <span class="divider">/</span>
+  {% capture rdx %}{{ forloop.rindex }}{% endcapture %}
+    <a href="{% for i in rdx %}../{% endfor %}">{{ category }}</a>
+    <span class="divider">/{{ rdx }}/</span>
   </li>
 {% if forloop.last %}
   <li class="active">{{ page.title }}</li>
