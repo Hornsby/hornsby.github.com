@@ -3,10 +3,14 @@
 ---
 {% for category in page.categories %}
 {% if forloop.first %}<ul class="breadcrumb" itemprop="breadcrumb">{% endif %}
-  <li class="{% if forloop.last %}active{% endif %}">
-    <a href="#">{{ category }}</a> {% unless forloop.last %}<span class="divider">/</span>{% endunless %}
+  <li>
+    <a href="#">{{ category }}</a>
+    <span class="divider">/</span>
   </li>
-{% if forloop.last %}</ul>{% endif %}
+{% if forloop.last %}
+  <li class="active">{{ page.title }}</li>
+</ul>
+{% endif %}
 {% endfor %}
 <p>
     Posted {{ page.date | date_to_string }}
