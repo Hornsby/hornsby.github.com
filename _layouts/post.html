@@ -4,7 +4,7 @@
 {% for category in page.categories %}
 {% if forloop.first %}<ul class="breadcrumb" itemprop="breadcrumb">{% endif %}
   <li>
-    <a href="#">{{ category }}</a>
+    <a href="{% for i in forloop.rindex %}../{% endfor %}">{{ category }}</a>
     <span class="divider">/</span>
   </li>
 {% if forloop.last %}
