@@ -9,7 +9,7 @@
 {% if forloop.last %}</ul>{% endif %}
 {% endfor %}
 <p>
-    Posted {{ page.date }}
+    Posted {{ page.date | date_to_string }}
     by <a href="{{ site.author.url }}">{{ site.author.name }}</a>
 </p>
 {% for tag in page.tags %}
