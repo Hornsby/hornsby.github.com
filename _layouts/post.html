@@ -1,7 +1,38 @@
 ---
     layout: default
 ---
+{% for category in page.categories %}
+{% if forloop.first %}<ul class="breadcrumb" itemprop="breadcrumb">{% endif %}
+  <li class="{% if forloop.last %}active{% endif %}">
+    <a href="#">{{ category }}</a> {% unless forloop.last %}<span class="divider">/</span>{% endunless %}
+  </li>
+{% if forloop.last %}</ul>{% endif %}
+{% endfor %}
+<p>
+    Posted {{ page.date }}
+    by <a href="{{ site.author.url }}">{{ site.author.name }}</a>
+</p>
+{% for tag in page.tags %}
+{% if forloop.first %}<nav class="keywords" itemprop="keywords">{% endif %}
+<span class="badge">{{ tag }}</span>
+{% if forloop.last %}</nav>{% endif %}
+{% endfor %}
+
 {{ content }}
+
 <div id="disqus_thread"></div>
-<script type="text/javascript">var disqus_shortname='{{ site.disqus.shortname }}',disqus_identifier='{{ page.date | date: "%Y%m%d" }}',disqus_url='{{ site.url }}{{ page.url }}';(function(){var dsq=document.createElement('script');dsq.type='text/javascript';dsq.async=true;dsq.src='http://'+disqus_shortname+'.disqus.com/embed.js';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script>
+var disqus_shortname='{{ site.disqus.shortname }}'
+, disqus_identifier='{{ page.date | date: "%Y%m%d" }}'
+, disqus_url='{{ site.url }}{{ page.url }}';
+(function(d, t){
+  var dsq=d.createElement('script');
+  dsq.type='text/javascript';
+  dsq.async=true;
+  dsq.src='http://'+disqus_shortname+'.disqus.com/embed.js';
+  (d[t]('head')[0]||d[t]('body')[0]).appendChild(dsq);
+})(document, 'getElementsByTagName');
+</script>
+<noscript>
+  Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
