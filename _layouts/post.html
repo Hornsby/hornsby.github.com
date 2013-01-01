@@ -1,11 +1,13 @@
 ---
     layout: default
 ---
+{% assign previous_category = '' %}
 {% for category in page.categories %}
+{% capture previous_category %}{{ previous_category }}/{{ category }}{% endcapture %}
 {% if forloop.first %}<ul class="breadcrumb" itemprop="breadcrumb">{% endif %}
   <li>
   {% capture rdx %}{{ forloop.rindex }}{% endcapture %}
-    <a href="{% for i in rdx %}../{% endfor %}">{{ category }}</a>
+    <a href="{{ previous_category }}">{{ category }}</a>
     <span class="divider">/{{ rdx }}/</span>
   </li>
 {% if forloop.last %}
