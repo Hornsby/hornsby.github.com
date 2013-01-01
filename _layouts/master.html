@@ -21,13 +21,13 @@
 </head>
 <body>
 <div id="wrap">
-<!--[if lt IE 7]--><div class="chromeframe alert">
+<!--[if lt IE 7]><div class="chromeframe alert">
 <button type="button" class="close" data-dismiss="alert">&times;</button>
 You are using an <strong>outdated</strong> browser.  Please
 <a href="http://browsehappy.com/">upgrade your browser</a> or
 <a href="http://www.google.com/chromeframe/?redirect=true">activate Google
 Chrome Frame</a> to improve your experience.
-</div><!--[endif]-->
+</div><![endif]-->
 <header class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
@@ -41,17 +41,18 @@ Chrome Frame</a> to improve your experience.
         <ul class="nav">
           <li class="{%if page.url == '/index.html'%}active{%endif%}"><a href="/">Home</a></li>
           <li><a href="http://github.com/{{ site.github.acct }}/{{ site.github.repo }}/wiki">Wiki</a></li>
-          <li class="divider-vertical"></li>
-          <li class="">
+        </ul>
+        <ul class="nav pull-right"
+          <li>
             <a rel="me" href="http://facebook.com/{{ site.facebook }}"><span><i class="icon-facebook"> </i><span class="hidden-desktop">Facebook</span></span></a>
           </li>
-          <li class="">
+          <li>
             <a rel="me" href="http://twitter.com/{{ site.twitter }}"><span><i class="icon-twitter"> </i> <span class="hidden-desktop">Twitter</span></span></a>
           </li>
-          <li class="">
+          <li>
             <a rel="me" href="http://plus.google.com/{{ site.gplus }}"><span><i class="icon-google-plus"> </i> <span class="hidden-desktop">Google+</span></span></a>
           </li>
-          <li class="">
+          <li>
             <a rel="me" href="http://github.com/{{ site.github.acct }}/{{ site.github.repo }}"><span><i class="icon-github"> </i> <span class="hidden-desktop">Google+</span></span></a>
           </li>
         </ul>
